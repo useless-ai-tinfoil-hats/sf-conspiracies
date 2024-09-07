@@ -75,14 +75,14 @@ def load_app():
         articles in the Context provided (infer the speaker names based on the conversation 
         and if you can't infer the names, just call them San Francisco Residents), and """ + template
 
-
+#  (Your total response MUST be 800 characters or less).
     summary_template = """
     Given the following input with a conspiracy title, description, and sources, create a 
     detailed and vivid scene that can be passed into an AI image generator based on the title and description.
     The scene should include specific visual elements, actions, 
     setting, and mood that reflect the core theme of the conspiracy theory. The output should be 
     structured for optimal image generation.
-    (Your total response MUST be 800 characters or less).
+
 
         **Conspiracy Theory Description**:
         {{input}}
@@ -94,28 +94,28 @@ def load_app():
     4. **Atmosphere and Mood**: Set the tone of the image (e.g., eerie, mysterious, futuristic) in one sentence.
     5. **Visual Details**: In a maximum of one sentence, focus on visual features such as color palette, textures, and any fine details that make the image compelling and related to the conspiracy.
 
-        **Example Output**:
-        A futuristic night-time scene in San Francisco, with a large UFO hovering silently above the Golden Gate Bridge. The bridge is dimly lit by streetlights, casting long shadows on the road. Dark clouds swirl ominously in the sky, as the UFO emits a faint, eerie blue glow. Below, several shadowy figures dressed in black suits and sunglasses are standing near the base of the bridge, staring upwards. The city in the background is barely visible through a thick, fog-like mist. The atmosphere is tense, with cool tones dominating the scene. The lighting is dramatic, with sharp contrasts between light and dark areas.
+    **Example Output**:
+    A futuristic night-time scene in San Francisco, with a large UFO hovering silently above the Golden Gate Bridge. The bridge is dimly lit by streetlights, casting long shadows on the road. Dark clouds swirl ominously in the sky, as the UFO emits a faint, eerie blue glow. Below, several shadowy figures dressed in black suits and sunglasses are standing near the base of the bridge, staring upwards. The city in the background is barely visible through a thick, fog-like mist. The atmosphere is tense, with cool tones dominating the scene. The lighting is dramatic, with sharp contrasts between light and dark areas.
 
-        Now generate a similar prompt based on the given conspiracy theory.
+    Now generate a similar prompt based on the given conspiracy theory and at the end of the prompt, add the sentence 'Make the image photorealistic and eerie.'.
         """
 
 
-    temp_mic_prompt = """
-    Speaker A: Hi, Rafa. How are you doing?
-    Speaker B: Hi, Vitoria. I'm doing good. And you?
-    Speaker A: I'm doing good. What have you been up to?
-    Speaker B: Not much. Just walking here and there. Did you hear what happened to me the other day?
-    Speaker A: No, what happened?
-    Speaker B: I was walking through Union Square and I saw a ginormous quantity of pigeons.
-    Speaker A: Oh my God. Yes. You know, I was at the ferry building and there were so many there too. So annoying.
-    Speaker B: You know what it is? I think it's the fact that they're building now. Pigeonshe they're not really birds. They're there to monitor us. So they're cyborg agents done by the government in order to monitor the people so that they behave just like the government wants.
-    Speaker A: Damn. Do you really think that would be happening?
-    Speaker B: I don't know, but I don't trust the government that much, to be honest.
-    Speaker A: Fair enough.
-    """
+    # temp_mic_prompt = """
+    # Speaker A: Hi, Rafa. How are you doing?
+    # Speaker B: Hi, Vitoria. I'm doing good. And you?
+    # Speaker A: I'm doing good. What have you been up to?
+    # Speaker B: Not much. Just walking here and there. Did you hear what happened to me the other day?
+    # Speaker A: No, what happened?
+    # Speaker B: I was walking through Union Square and I saw a ginormous quantity of pigeons.
+    # Speaker A: Oh my God. Yes. You know, I was at the ferry building and there were so many there too. So annoying.
+    # Speaker B: You know what it is? I think it's the fact that they're building now. Pigeonshe they're not really birds. They're there to monitor us. So they're cyborg agents done by the government in order to monitor the people so that they behave just like the government wants.
+    # Speaker A: Damn. Do you really think that would be happening?
+    # Speaker B: I don't know, but I don't trust the government that much, to be honest.
+    # Speaker A: Fair enough.
+    # """
 
-    prompt = temp_mic_prompt
+    # prompt = temp_mic_prompt
     # Function to create the prompt builder based on the selected template
     def get_prompt_builder(use_mic_template: bool):
         selected_template = mic_template if use_mic_template else template
@@ -146,7 +146,7 @@ def load_app():
         return summary_rag_pipeline
 
     # Pipeline for creating one sentence summary
-    input_pipeline = create_pipeline(True, text_embedder)
+    input_pipeline = create_pipeline(False, text_embedder)
     summary_rag_pipeline = create_summary_pipeline()
 
 
@@ -162,13 +162,16 @@ def load_app():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
+    
+    with st.container():
+        prompt = st.chat_input("What is up?")
 
-    if prompt := st.chat_input("What is up?"):
-        prompt = temp_mic_prompt
+    if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
 
+        # Run the pipeline to get the conspiracy theory
         result = input_pipeline.run({
             "text_embedder": {"text": prompt},
             "prompt_builder": {"question": prompt}
@@ -176,59 +179,30 @@ def load_app():
 
         documents = result.get("llm")
         if documents:
+            response = documents["replies"][0]
             with st.chat_message("assistant"):
-                response = documents["replies"][0]
                 st.markdown(response)
                 st.session_state.messages.append({"role": "assistant", "content": response})
 
+            # Generate a summary
             summary_result = summary_rag_pipeline.run({
                 "prompt_builder": {"input": response}
             })
 
             summary_docs = summary_result.get("llm")
             if summary_docs:
+                summary_response = summary_docs["replies"][0]
                 with st.chat_message("assistant"):
-                    summary_response = summary_docs["replies"][0]
                     st.markdown(summary_response)
 
-            # # Function to generate an image using DALL-E API based on the conspiracy theory
-            # def generate_image(prompt: str) -> str:
-            #     try:
-            #         response = openai.images.generate(
-            #             prompt=prompt, 
-            #             n=1,
-            #             size="512x512"
-            #         )
-            #         image_url = response.data[0].url
-            #         return image_url
-            #     except Exception as e:
-            #         st.error(f"Error generating image: {e}")
-            #         return None
+                        
+                        
 
-            # # Function to display the image from a URL
-            # def display_image(image_url: str, file_path: str, save: bool = False):
-            #     try:
-            #         response = requests.get(image_url)
-            #         img = Image.open(BytesIO(response.content))
-
-            #         if save:
-            #             if not os.path.exists(file_path):
-            #                 os.makedirs(file_path)
-            #             img.save(os.path.join(file_path, "generated_image.png"))
-                    
-            #         st.image(img, caption="Generated by DALL-E", use_column_width=True)
-            #     except Exception as e:
-            #         st.error(f"Error displaying image: {e}")
-
-            generate_and_display_image_from_summary(summary_response)
-            # if image_url:
-            #     display_image(image_url, file_path="images", save=True)
-            # else:
-            #     st.error("Failed to generate image.")
-        
-
+                generate_and_display_image_from_summary(summary_response, save=True)
+            else:
+                st.error("Failed to generate summary.")
         else:
             st.error("No documents found. Please check the pipeline configuration.")
 
-        
-        
+            
+            
