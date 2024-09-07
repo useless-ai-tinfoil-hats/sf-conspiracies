@@ -1,0 +1,3 @@
+How the Chronicle built a national database of fatal police chases
+-----
+To build the Chronicle's national dataset of at least 3,336 people killed in police vehicle pursuits from 2017 through 2022, we used information from three primary sources: the federal government, private research organizations and our reporting.While no government agency counts every police pursuit death, the National Highway Traffic Safety Administration comes closest. We used data published by NHTSA via its Fatality Analysis Reporting system (FARS) to produce a list of people killed

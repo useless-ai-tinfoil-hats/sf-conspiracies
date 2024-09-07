@@ -1,0 +1,3 @@
+SpellTower
+-----
+A fresh take on the old-fashioned word search, SpellTower clears out any words you find, with the ultimate goal to strategically clear out an entire board. Get an extra hit of dopamine with bonus clears; if you make a 5+ letter word, all adjacent tiles get cleared out too. Using rare letters (J,Q,X,V) will clear out an entire row– but take care to not clear out the vowels you need. Players often stick with a specific strategy: start at the bottom, focus on keeping the columns even, or knock out

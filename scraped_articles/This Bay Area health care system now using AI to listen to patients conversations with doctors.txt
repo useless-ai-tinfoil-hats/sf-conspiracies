@@ -1,0 +1,4 @@
+This Bay Area health care system now using AI to listen to patients’ conversations with doctors
+-----
+The Kaiser health care system is now using artificial intelligence to listen in on appointments between doctors and patients, the nonprofit said Wednesday.The announcement comes after other Bay Area hospital systems, including Sutter Health, have deployed the technology, and after Kaiser told the Chronicle earlier this month it had been testing similar technology.
+Called Abridge AI, the tool "is now available to doctors and other clinicians at Kaiser Permanente's 40 hospitals and

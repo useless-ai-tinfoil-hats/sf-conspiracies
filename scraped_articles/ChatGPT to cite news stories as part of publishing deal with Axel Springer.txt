@@ -1,0 +1,4 @@
+ChatGPT to cite news stories as part of publishing deal with Axel Springer
+-----
+OpenAI plans to start citing its sources. At least more than it has been doing.The leading generative artificial intelligence startup said Wednesday that it would partner with German publishing house Axel Springer, owner of Politico, Business Insider, and European properties including Bild and Welt.
+San Francisco-based OpenAI said the partnership will allow its ChatGPT interface to call up more recent information on a variety of topics when responding to users' prompts, and be able

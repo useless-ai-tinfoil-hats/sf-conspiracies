@@ -1,0 +1,4 @@
+Waymo announces software recall after two robotaxis collided with a tow truck in Phoenix
+-----
+Waymo has issued its first-ever software recall this week after two of its driverless robotaxis collided with a tow truck in Phoenix.The Dec. 11 collisions with a truck towing a backwards-facing pickup truck happened within minutes of each other because, according to the company, after the self-driving cars "incorrectly predicted the future motion of the towed vehicle."
+The towed pickup truck was "persistently angled across a center turn lane and a traffic lane," the company said,

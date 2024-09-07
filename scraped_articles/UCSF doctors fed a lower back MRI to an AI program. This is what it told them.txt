@@ -1,0 +1,3 @@
+UCSF doctors fed a lower back MRI to an AI program. This is what it told them
+-----
+Artificial intelligence can already answer questions and produce fantastical images from a few short words. Now, increasingly, it is helping doctors analyze images from inside patients' bodies to identify disease in new ways.Researchers at UCSF are harnessing AI to read medical scans such as MRIs and help spot nuances or connections that even the most highly trained clinical professionals might miss. The software can more exactly quantify degradation, identify links between disparate

@@ -1,0 +1,4 @@
+California-based Kaiser to notify millions after possibly exposing user data to tech companies
+-----
+Kaiser Permanente, the Oakland-based health care conglomerate, is warning millions of customers that one of its divisions may have exposed their names, symptom searches and other data to major tech companies.Kaiser Foundation Health Plan Inc. disclosed the data breach to the U.S. Department of Health and Human Services on April 12. TechCrunch first reported the news.
+Kaiser told SFGATE in a statement on Thursday, "certain online technologies, previously installed on its websites

@@ -1,0 +1,4 @@
+David Mills, Oakland-born 'Father Time' of internet, dies at 85
+-----
+David Mills, who created the tool that keeps the internet's clocks synchronized, has died at 85.The Oakland-born man invented and spent decades upgrading Network Time Protocol, a system that, to this day, keeps the digital world's clocks perfectly aligned. Mills first implemented the protocol in the 1980s and improved it as internet use expanded, helping to transform the world's relationship with clocks and earning himself the "Father Time" moniker.
+Thanks to Mills, atomic clocks

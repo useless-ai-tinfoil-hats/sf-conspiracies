@@ -1,0 +1,4 @@
+Kaiser Permanente data breach may have affected 13.4 million members
+-----
+Kaiser Permanente reported a data breach Monday that could affect millions of its customers.The Bay Area health care giant said that when members and patients accessed its websites or mobile applications, data sent to third-party technology companies such as Google and X (formerly Twitter) via web cookies might have included personal information.
+The information mainly consisted of IP addresses and search terms used while logged into a Kaiser Permanente account or service. The data

@@ -1,0 +1,4 @@
+Sam Altman says OpenAI has a plan to combat election misinformation. It’s not enough
+-----
+This year, nearly half of the global population will head to the polls in a succession of national elections — and all over the world, generative AI (or GenAI) is going to unleash a tsunami of toxic and untrustworthy political content, including remarkably convincing "deepfaked" images and videos showing candidates saying and doing things that never actually happened.This isn't a theoretical threat.
+We've already been treated to deepfaked images of Donald Trump picking out a prison

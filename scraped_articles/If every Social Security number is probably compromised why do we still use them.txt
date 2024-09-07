@@ -1,0 +1,4 @@
+If every Social Security number is (probably) compromised, why do we still use them?
+-----
+Your Social Security number has probably been compromised.According to a class-action lawsuit filed this month by Fremont resident Christopher Hofmann, hackers from cybercriminal group USDoD obtained billions of pieces of personal identifying information, including Social Security numbers, from background-check company National Public Data.
+The suit alleges that information for 2.9 billion people obtained in that breach, including Hofmann, is now for sale on the dark web for $3.5

@@ -1,0 +1,4 @@
+Charts show how California crime trends compare to rest of U.S.
+-----
+California's violent crime rate increased for the second year in a row in 2022, while violence in the United States overall declined. But the state's property crime increased only modestly and in line with the rest of the country.These findings come from the FBI's latest annual release of crime data collected via its Uniform Crime Reporting Program, which collects data from law enforcement agencies across the country.
+The most important trend shown by the data is a drop in

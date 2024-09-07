@@ -1,0 +1,4 @@
+OpenAI unveils video tool that blurs the line between reality and computer-generated fantasy
+-----
+San Francisco-based software company OpenAI released its latest eye-popping artificial intelligence tool Thursday, a text-to-video generator that can build short clips from written prompts with photorealistic details of fantastical scenes.CEO Sam Altman announced the tool, called Sora, on X, inviting users to send him prompts that he then plugged into the program to spit out sample videos.
+The new AI model works by generating a video with lots of visual "static" and then refining

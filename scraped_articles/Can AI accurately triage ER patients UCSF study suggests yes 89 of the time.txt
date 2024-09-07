@@ -1,0 +1,4 @@
+Can AI accurately triage ER patients? UCSF study suggests yes, 89% of the time
+-----
+In one of the first studies to test whether artificial intelligence can help triage real-world emergency room patients, new UCSF research suggests AI could one day help doctors make one of the most critical decisions in medicine: who to give urgent medical care to first.The study, published Tuesday in JAMA Network Open, found that an AI model can accurately prioritize the sickest patients 89% of the time.
+Previous studies have examined whether AI models can accurately triage

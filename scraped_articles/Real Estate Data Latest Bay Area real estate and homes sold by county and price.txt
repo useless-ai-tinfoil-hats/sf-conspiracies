@@ -1,0 +1,3 @@
+Real Estate Data: Latest Bay Area real estate and homes sold by county and price
+-----
+The Neighborhood Homes Sold listing is a weekly feature of the Sunday Chronicle. This list is provided by California REsource, a title abstracting company. The addresses, sales price, number of bedrooms, square footage and year the homes were built are based on information supplied from Bay Area counties' property transaction records, which, in some cases, may not be complete. Neither The Chronicle nor California REsource guarantees the completeness or accuracy of the information. Questions and

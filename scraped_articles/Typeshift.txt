@@ -1,0 +1,3 @@
+Typeshift
+-----
+For fans of anagram-based games (STAR, RATS, TARS…), Typeshift is a new puzzle with a literal twist. Turn every letter solid by finding a word that uses a letter in their fixed spot. You score points for every solid letter, and turning them bold feels really satisfying. As always with our games, there's more than one way to play: find the Core word and eliminate letters that way, or try lots of different words quickly, as the value for turning letters solid decreases over time. If all else

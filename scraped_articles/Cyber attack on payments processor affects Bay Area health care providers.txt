@@ -1,0 +1,3 @@
+Cyber attack on payments processor affects Bay Area health care providers
+-----
+Kaiser Permanente and John Muir Health are among the health care providers nationwide affected by a cyber attack on Change Healthcare, a widely used payments processing vendor in the health care industry.A ransomware group calling itself BlackCat hacked into Change Healthcare, a unit of UnitedHealth, in February. It shut down parts of Change Healthcare's electronic operations, rendering hundreds of hospitals and other medical practices unable to collect payment for medical services or

@@ -1,0 +1,4 @@
+S.F. AI company Anthropic sued over copyright claims by music publishers
+-----
+San Francisco's Anthropic, the multibillion dollar AI company known for its Claude chatbot, is facing a federal lawsuit from a group of music publishers who say the company used huge amounts of copyrighted song lyrics to train its product.Chatbots like Claude and OpenAI's ChatGPT interface are fed an enormous number of language examples from across the internet, and their programming allows them to base answers to user prompts off of what they have "read."
+Anthropic did not

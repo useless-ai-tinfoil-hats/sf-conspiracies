@@ -1,0 +1,3 @@
+One day after suing Open AI, Michael Chabon and other authors sue Meta
+-----
+A group of authors, including Michael Chabon and David Henry Hwang who sued OpenAI Monday over their AI chatbot, on Tuesday brought a similar suit in federal court against Meta, formerly Facebook, over their AI offering, LLaMA.Like the Monday suit, this one was also brought in San Francisco and is seeking class-action status. It claims LLaMA, an open-source AI chatbot which stands for Large Language Model Meta AI, was trained on the authors' works without permission and accused the

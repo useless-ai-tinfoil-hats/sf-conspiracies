@@ -1,0 +1,3 @@
+How Googlers cracked an SF rival's tech model with a single word
+-----
+Just in time for ChatGPT to turn a year old, a group of researchers from Google published a paper showing how easy it is to break OpenAI's buzzy technology.The paper, published Tuesday, provides a look at how scientists at the forefront of artificial intelligence research — an extremely well-paid job, for some — are testing the limits of popular products in real time. Google and its AI lab, DeepMind, where the majority of the paper's authors work, are in a race to turn scientific

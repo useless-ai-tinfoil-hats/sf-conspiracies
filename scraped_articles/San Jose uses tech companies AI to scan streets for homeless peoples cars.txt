@@ -1,0 +1,3 @@
+San Jose uses tech companies' AI to scan streets for homeless people's cars
+-----
+In southern neighborhoods of San Jose, cameras attached to a city-owned car have been recording footage of streets and sidewalks. The purpose, in part, was to evaluate whether artificial intelligence software could automatically detect which parked vehicles might have homeless people living in them.A Monday report from the Guardian outlined the pilot program: Using AI, tech companies' cameras mounted on the car scanned vehicles for signs that they were being used as lodging.

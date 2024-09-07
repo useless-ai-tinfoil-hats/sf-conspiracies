@@ -1,0 +1,3 @@
+About half of Bay Area-based 23andMe’s customers had their personal data stolen
+-----
+A hacker gained access to the personal information of millions of 23andMe users, including some DNA information, the South San Francisco-based company confirmed to SFGATE on Tuesday.Initially the hacker broke into 14,000 accounts with usernames and passwords compromised elsewhere on the web, company spokesperson Scott Hadly said. But thanks to 23andMe's "DNA Relative" tool, which lets users connect with genetic relatives, the hacker was able to see private information from 6.9 million

@@ -1,0 +1,4 @@
+Southwest Airlines gives in to this flight-booking hack
+-----
+For years, it was a distinction that set Southwest Airlines apart from all the other airlines.The airline refused to allow its flights to appear among competitors when using third-party sites like Google Flights to book a trip.
+Some travelers were so peeved by Southwest's absence that one developer created a Google Chrome extension called Travel Arrow that automatically placed Southwest on Google Flight searches. The extension was installed more than 30,000 times in its first few

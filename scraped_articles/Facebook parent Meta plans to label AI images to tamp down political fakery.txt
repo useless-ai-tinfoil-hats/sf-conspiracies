@@ -1,0 +1,3 @@
+Facebook parent Meta plans to label AI images to tamp down political fakery
+-----
+As generating images with artificial intelligence gets easier and better, determining which are real and which are digital composites is getting harder.Menlo Park-based Meta, owner of Facebook, Instagram and Threads, said Tuesday it will begin labeling AI-generated images when possible in the coming months. The company said in a blog post from Nick Clegg, Meta's head of global affairs, that it is working "with industry partners on common technical standards for identifying AI content,"

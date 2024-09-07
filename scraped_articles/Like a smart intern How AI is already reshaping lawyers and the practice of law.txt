@@ -1,0 +1,4 @@
+‘Like a smart intern’: How AI is already reshaping lawyers and the practice of law
+-----
+Gordon Calhoun was up to his neck in jargon.An experienced trial attorney, Calhoun was handling a hotly contested litigation involving reams of arcane data and terminology about pharmaceuticals and medical devices. Neither he nor anyone else on his team at Lewis Brisbois Bisgaard & Smith LLP in San Francisco was expert in the subject.
+But instead of spending the time and money to hire a consultant, Calhoun began feeding documents into a legal AI tool called Everlaw. Before long,

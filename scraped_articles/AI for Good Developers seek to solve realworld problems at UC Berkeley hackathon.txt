@@ -1,0 +1,4 @@
+‘AI for Good’: Developers seek to solve real-world problems at UC Berkeley hackathon
+-----
+Using artificial intelligence to solve real-world problems, 1,200 developers vied for venture capital funding and other prizes over the weekend at a UC Berkeley hackathon.Participants competed Saturday and Sunday in the field of generative AI, which consumes data, learns from it, then produces text, images, sound or computer code with similar characteristics.
+Berkeley SkyDeck, a global hub for entrepreneurs, organized its second GenAI hackathon in partnership with Cal Hacks, the

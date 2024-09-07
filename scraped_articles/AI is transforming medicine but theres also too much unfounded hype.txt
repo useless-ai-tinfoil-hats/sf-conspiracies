@@ -1,0 +1,3 @@
+AI is transforming medicine, but there’s also too much unfounded hype
+-----
+Recently, my colleagues and I at Stanford University launched a study of a promising AI tool to screen for colon cancer. Earlier trials had suggested the tool could help doctors detect potentially cancerous growths called polyps during colonoscopies. Our study was one of the first to roll it out in a real-world clinical environment.What we found shocked us: The tool did not improve polyp detection rates or other outcomes. But then this is not the first artificial intelligence health care

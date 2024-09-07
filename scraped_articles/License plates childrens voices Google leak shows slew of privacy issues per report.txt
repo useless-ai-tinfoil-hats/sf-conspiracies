@@ -1,0 +1,3 @@
+License plates, children's voices: Google leak shows slew of privacy issues, per report
+-----
+Google's incredible size and scope has an alarming side effect: When the company makes coding mistakes, millions of people can lose their privacy.An internal database from the Mountain View tech giant leaked to 404 Media listed thousands of employee-reported privacy incidents during a period between 2013 and 2018. The outlet's report, published Monday, included a slew of errors by Google, including the recording of children's voices and the exposure of more than a million people's email

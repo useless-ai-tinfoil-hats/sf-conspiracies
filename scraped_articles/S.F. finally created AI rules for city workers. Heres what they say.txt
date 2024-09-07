@@ -1,0 +1,3 @@
+S.F. finally created AI rules for city workers. Here’s what they say
+-----
+San Francisco has released its first guidelines on how city employees should use artificial intelligence at work, more than a year after OpenAI first rocked the world with the ChatGPT chatbot that reinforced San Francisco's dominance in the burgeoning AI industry.The guidelines direct city employees always to fact check AI-generated content and to disclose when they use the technology, which can be harnessed to write and summarize emails and other documents as well as to generate images

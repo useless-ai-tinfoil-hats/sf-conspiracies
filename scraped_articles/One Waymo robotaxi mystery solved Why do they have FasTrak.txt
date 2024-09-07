@@ -1,0 +1,4 @@
+One Waymo robotaxi mystery, solved: Why do they have FasTrak?
+-----
+If you've traveled in a Waymo robotaxi since state regulators signed off on the company's unrestricted commercial expansion in San Francisco, you may have noticed something peculiar affixed on their dashboards — a FasTrak toll tag.Also known as transponders, these tags are commonly used by Bay Area commuters who drive on the region's bridges or expansive network of express lanes and want to pay tolls electronically.
+The company confirmed to the Chronicle that each Waymo taxi in the

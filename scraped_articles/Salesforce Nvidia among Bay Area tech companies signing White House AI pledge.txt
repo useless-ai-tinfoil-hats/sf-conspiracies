@@ -1,0 +1,4 @@
+Salesforce, Nvidia among Bay Area tech companies signing White House AI pledge
+-----
+Seven more companies developing AI technology — most of them based in the Bay Area — have signed a voluntary pledge at the request of the Biden Administration to responsibly develop the powerful new technology.Adobe, Cohere, IBM, Nvidia, Palantir, Salesforce, Scale AI and Stability signed the pledge, which requires the companies to ensure products are safe before releasing them publicly, and focus on security and building public trust.
+Adobe makes a suite of graphics products like

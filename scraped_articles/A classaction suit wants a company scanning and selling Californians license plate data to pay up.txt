@@ -1,0 +1,3 @@
+A class-action suit wants a company scanning and selling Californians' license plate data to pay up
+-----
+If you drive a car in California, you may be in for a payday thanks to a lawsuit alleging privacy violations by a Texas company.The 2021 lawsuit, given class-action status in September, alleges that Digital Recognition Network is breaking a California law meant to regulate the use of automatic license plate readers. DRN, a Fort Worth-based company, uses plate-scanning cameras to create location data for people's vehicles, then sells that data to marketers, car repossessors and insurers.

@@ -1,0 +1,5 @@
+A Cruise robotaxi dragged a pedestrian in S.F. Now we know why the car didn’t stop
+-----
+UPDATE: Cruise lays off contract workers responsible for maintaining its robotaxisFor weeks, a key question surrounding the Oct. 2 crash involving a Cruise robotaxi remained unanswered: Why did the driverless vehicle continue to drive, trying to pull over, while a woman was pinned under its chassis?
+Cruise has now revealed the reason: The vehicle's software mischaracterized where the robotaxi initially struck the woman, leading it to make the wrong decision.
+*  Driverless

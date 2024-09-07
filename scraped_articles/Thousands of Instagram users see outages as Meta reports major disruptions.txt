@@ -1,0 +1,4 @@
+Thousands of Instagram users see outages as Meta reports 'major disruptions'
+-----
+Users of Meta-owned Instagram, Facebook and WhatsApp reported outages and problems with the platforms on Wednesday.The issues began around 11 a.m., according to Downdetector.com, when thousands of users for the apps reported complaints about service interruptions. By 1:30 p.m., SFGATE could successfully use each of the apps without issue, but complaints continued on Downdetector, particularly for Instagram.
+Engineering teams were investigating "Major disruptions" on a few of Meta's

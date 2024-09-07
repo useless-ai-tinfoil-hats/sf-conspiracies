@@ -1,0 +1,4 @@
+Layoffs continue at Google, this time hitting development teams
+-----
+Google has trimmed staff within various development teams in its latest round of layoffs, a spokesperson for the Mountain View tech giant confirmed on Monday.Although Google did not provide a specific head count, the company filed a WARN notice with California authorities on April 24, indicating plans to eliminate 50 positions. The layoffs reportedly impacted members of teams such as Flutter, Dart and Python, according to TechCrunch, which first reported the news.
+The spokesperson

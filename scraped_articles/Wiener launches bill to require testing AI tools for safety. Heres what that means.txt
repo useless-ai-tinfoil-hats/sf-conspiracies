@@ -1,0 +1,3 @@
+Wiener launches bill to require testing AI tools for safety. Here’s what that means
+-----
+In a bid to regulate the rapidly emerging artificial intelligence industry in California, state Sen. Scott Wiener, D-San Francisco, introduced a bill Thursday that would require companies building the largest and most powerful AI models to test them for safety before releasing them to the public.The bill would require companies working on AI technology to disclose their safety protocols to the state's technology department and would permit the state to sue under certain circumstances if

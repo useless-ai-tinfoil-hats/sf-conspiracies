@@ -1,0 +1,4 @@
+Here's why people in duck costumes were wandering downtown San Francisco
+-----
+If you were around Moscone Center last Tuesday evening or Thursday morning, June 11 and 13, you may have noticed a group of 10 people waddling around the area dressed in duck costumes and holding signs protesting against "Big Data."They were gathered to promote MotherDuck, a serverless, collaborative data warehouse that extends DuckDB — an open source database management system — to the cloud. MotherDuck partners with data science, AI and business intelligence technologies.
+The

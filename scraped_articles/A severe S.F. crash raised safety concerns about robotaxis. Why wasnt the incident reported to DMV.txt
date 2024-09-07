@@ -1,0 +1,4 @@
+A severe S.F. crash raised safety concerns about robotaxis. Why wasn’t the incident reported to DMV?
+-----
+A severe crash on Oct. 2 involving a Cruise robotaxi led to the California Department of Motor Vehicles' immediate suspension of the company's driverless vehicles in San Francisco. However, the incident is noticeably missing from the list of autonomous vehicle collisions reported to the state regulator.Why?
+The short answer: In California, AV companies are required to report to the DMV any collisions involving their driverless cars only if they happened while companies were testing

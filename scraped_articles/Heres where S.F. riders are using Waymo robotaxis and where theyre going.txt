@@ -1,0 +1,3 @@
+Here’s where S.F. riders are using Waymo robotaxis, and where they’re going
+-----
+In the six months since Waymo's driverless robotaxis began commercial service in San Francisco, the white and black cars with lidar lids have become a common sight in the city.Now, using data Waymo reports to state regulators, it's possible to know where the company's robotaxis are taking people, and which parts of the city are seeing the most activity. The data, first reported by the Chronicle, gives insight to how and where people are using the city's newest transportation mode.

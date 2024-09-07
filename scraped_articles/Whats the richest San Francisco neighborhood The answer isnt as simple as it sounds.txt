@@ -1,0 +1,4 @@
+What’s the richest San Francisco neighborhood? The answer isn’t as simple as it sounds
+-----
+What's the richest neighborhood in San Francisco? It's actually a surprisingly complicated question to answer.While the U.S. Census Bureau provides income estimates for cities and counties, it doesn't calculate figures for city neighborhoods. The closest geographic equivalent from the agency are census tracts, small groups of adjacent city blocks, which are smaller than most San Francisco neighborhoods.
+But because those census tracts align with the city's neighborhood boundaries,

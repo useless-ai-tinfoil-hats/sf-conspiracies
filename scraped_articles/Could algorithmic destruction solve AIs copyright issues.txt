@@ -1,0 +1,3 @@
+Could ‘algorithmic destruction’ solve AI’s copyright issues?
+-----
+If artificial intelligence mimics our brains, does that mean it too can unlearn something it knows?That question is central to lawsuits filed by a range of creatives who say their copyrighted work was infringed by OpenAI and Meta. But making an AI "forget" isn't the same as removing the blocky chips from HAL 9000's digital brain in "2001: A Space Odyssey." In fact, the lawsuits raise the question: is "unlearning" even possible for an AI? And, if not, are there other ways to ensure

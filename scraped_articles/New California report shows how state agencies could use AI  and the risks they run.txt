@@ -1,0 +1,3 @@
+New California report shows how state agencies could use AI — and the risks they run
+-----
+Months after Gov. Gavin Newsom signed an executive order directing state agencies to study how to use generative artificial intelligence to provide better services to Californians, his office has released its first report with more specifics about how the technology might be used, but also warnings about how its use could go awry once embedded in state systems.The report issued Nov. 21 emphasized that text, audio and video output from AI systems should never be used verbatim, and said

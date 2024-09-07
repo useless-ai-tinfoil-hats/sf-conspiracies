@@ -1,0 +1,3 @@
+Authors Michael Chabon, David Henry Hwang sue OpenAI over copyright concerns
+-----
+A group of authors, including Michael Chabon and David Henry Hwang, have filed suit in federal court against OpenAI, alleging the company unfairly used their copyrighted works to teach its chatbots how to respond to written prompts.The lawsuit, which is seeking class-action status, is the latest in a chorus of legal actions filed against makers of artificial intelligence chatbots like OpenAI, Meta, Google and others which hoover up huge amounts of language and data from the internet to

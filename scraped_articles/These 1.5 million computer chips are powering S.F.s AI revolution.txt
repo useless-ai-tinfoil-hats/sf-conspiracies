@@ -1,0 +1,5 @@
+These $1.5 million computer chips are powering S.F.’s AI revolution
+-----
+"Welcome to the AI factory."That is how Andrew Feldman, CEO of computer chipmaker Cerebras, describes the Santa Clara data center he's standing inside. Here, rows upon rows of blinking computers lashed together form a supercomputer that performs the trillions of calculations needed to run Artificial Intelligence programs.
+Unlike other server rooms that are the nerve centers of AI programs, this one happens to be built around the largest computer chip on the market.
+That chip

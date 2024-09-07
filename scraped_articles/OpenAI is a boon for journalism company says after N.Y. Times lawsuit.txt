@@ -1,0 +1,3 @@
+OpenAI is a boon for journalism, company says after N.Y. Times lawsuit
+-----
+ChatGPT maker OpenAI took the New York Times to task Monday over a lawsuit filed by the publisher claiming OpenAI's chatbots used its copyrighted content without permission, and in some cases reproduced pieces of articles unchanged.OpenAI argued in a blog post that it merely used the Times' content, and reams of other online content, to train its programs, claiming that its chatbots rarely "regurgitated" chunks of copyrighted material, and that the Times intentionally forced the program
