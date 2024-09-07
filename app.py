@@ -15,7 +15,7 @@ from io import BytesIO
 from PIL import Image
 from image_utils import *
 
-def load_app():
+def load_app(use_mic_template: bool):
     load_dotenv()
 
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -74,6 +74,8 @@ def load_app():
     mic_template = """Connect the following conversation indicated in the Question to news 
         articles in the Context provided (infer the speaker names based on the conversation 
         and if you can't infer the names, just call them San Francisco Residents), and """ + template
+    
+    combined_template = mic_template if use_mic_template else text_template
 
 #  (Your total response MUST be 800 characters or less).
     summary_template = """
@@ -116,14 +118,10 @@ def load_app():
     # """
 
     # prompt = temp_mic_prompt
-    # Function to create the prompt builder based on the selected template
-    def get_prompt_builder(use_mic_template: bool):
-        selected_template = mic_template if use_mic_template else template
-        return PromptBuilder(template=selected_template)
 
     # Create pipelines dynamically based on the selected template
-    def create_pipeline(use_mic_template: bool, text_embedder):
-        prompt_builder = get_prompt_builder(use_mic_template)
+    def create_pipeline(text_embedder, template):
+        prompt_builder = PromptBuilder(template=template)
         basic_rag_pipeline = Pipeline()
         basic_rag_pipeline.add_component("text_embedder", text_embedder)
         basic_rag_pipeline.add_component("retriever", retriever)
@@ -146,7 +144,7 @@ def load_app():
         return summary_rag_pipeline
 
     # Pipeline for creating one sentence summary
-    input_pipeline = create_pipeline(False, text_embedder)
+    input_pipeline = create_pipeline(text_embedder, combined_template)
     summary_rag_pipeline = create_summary_pipeline()
 
 
@@ -162,9 +160,9 @@ def load_app():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    
+    # if te
     with st.container():
-        prompt = st.chat_input("What is up?")
+        prompt = st.chat_input("What is up?", key=use_mic_template)
 
     if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
