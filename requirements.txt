@@ -53,6 +53,7 @@ psutil==6.0.0
 ptyprocess==0.7.0
 pure_eval==0.2.3
 pyarrow==17.0.0
+pyaudio==0.2.14
 pydantic==2.8.2
 pydantic_core==2.20.1
 pydeck==0.9.1
