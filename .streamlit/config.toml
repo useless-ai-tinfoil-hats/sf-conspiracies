@@ -1,0 +1,5 @@
+[theme]
+primaryColor = "#BF4F4F" # Rusty Red for primary accents
+backgroundColor = "#121212" # Charcoal Black for the background
+secondaryBackgroundColor = "#2F4F4F" # Slate Gray for secondary backgrounds
+textColor = "#C0C0C0" # Silver for text
