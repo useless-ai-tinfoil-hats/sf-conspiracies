@@ -116,121 +116,121 @@ Speaker B: I don't know, but I don't trust the government that much, to be hones
 Speaker A: Fair enough.
 """
 
+prompt = temp_mic_prompt
+# Function to create the prompt builder based on the selected template
+def get_prompt_builder(use_mic_template: bool):
+    selected_template = mic_template if use_mic_template else template
+    return PromptBuilder(template=selected_template)
+
+# Create pipelines dynamically based on the selected template
+def create_pipeline(use_mic_template: bool):
+    prompt_builder = get_prompt_builder(use_mic_template)
+    basic_rag_pipeline = Pipeline()
+    basic_rag_pipeline.add_component("text_embedder", text_embedder)
+    basic_rag_pipeline.add_component("retriever", retriever)
+    basic_rag_pipeline.add_component("prompt_builder", prompt_builder)
+    basic_rag_pipeline.add_component("llm", OpenAIGenerator(model="gpt-3.5-turbo"))
+    
+    # Connect pipeline components
+    basic_rag_pipeline.connect("text_embedder.embedding", "retriever.query_embedding")
+    basic_rag_pipeline.connect("retriever", "prompt_builder.documents")
+    basic_rag_pipeline.connect("prompt_builder", "llm")
+    
+    return basic_rag_pipeline
+
+def create_summary_pipeline():
+    summary_prompt_builder = PromptBuilder(template=summary_template)
+    summary_rag_pipeline = Pipeline()
+    summary_rag_pipeline.add_component("prompt_builder", summary_prompt_builder)
+    summary_rag_pipeline.add_component("llm", OpenAIGenerator(model="gpt-3.5-turbo"))
+    summary_rag_pipeline.connect("prompt_builder", "llm")
+    return summary_rag_pipeline
+
+# 5. **Visual Details**: In a maximum of one sentence, focus on visual features such as color palette, textures, and any fine details that make the image compelling and related to the conspiracy.
+# Pipeline for creating one sentence summary
+input_pipeline = create_pipeline(True)
+summary_rag_pipeline = create_summary_pipeline()
+
+
+
+st.title("👁️‍🗨️🌉 SF Conspiracy Theory Generator ")
+st.write(
+    "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco."
+)
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+if prompt := st.chat_input("What is up?"):
     prompt = temp_mic_prompt
-    # Function to create the prompt builder based on the selected template
-    def get_prompt_builder(use_mic_template: bool):
-        selected_template = mic_template if use_mic_template else template
-        return PromptBuilder(template=selected_template)
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-    # Create pipelines dynamically based on the selected template
-    def create_pipeline(use_mic_template: bool):
-        prompt_builder = get_prompt_builder(use_mic_template)
-        basic_rag_pipeline = Pipeline()
-        basic_rag_pipeline.add_component("text_embedder", text_embedder)
-        basic_rag_pipeline.add_component("retriever", retriever)
-        basic_rag_pipeline.add_component("prompt_builder", prompt_builder)
-        basic_rag_pipeline.add_component("llm", OpenAIGenerator(model="gpt-3.5-turbo"))
-        
-        # Connect pipeline components
-        basic_rag_pipeline.connect("text_embedder.embedding", "retriever.query_embedding")
-        basic_rag_pipeline.connect("retriever", "prompt_builder.documents")
-        basic_rag_pipeline.connect("prompt_builder", "llm")
-        
-        return basic_rag_pipeline
+    result = input_pipeline.run({
+        "text_embedder": {"text": prompt},
+        "prompt_builder": {"question": prompt}
+    })
 
-    def create_summary_pipeline():
-        summary_prompt_builder = PromptBuilder(template=summary_template)
-        summary_rag_pipeline = Pipeline()
-        summary_rag_pipeline.add_component("prompt_builder", summary_prompt_builder)
-        summary_rag_pipeline.add_component("llm", OpenAIGenerator(model="gpt-3.5-turbo"))
-        summary_rag_pipeline.connect("prompt_builder", "llm")
-        return summary_rag_pipeline
+    documents = result.get("llm")
+    if documents:
+        with st.chat_message("assistant"):
+            response = documents["replies"][0]
+            st.markdown(response)
+            st.session_state.messages.append({"role": "assistant", "content": response})
 
-    # 5. **Visual Details**: In a maximum of one sentence, focus on visual features such as color palette, textures, and any fine details that make the image compelling and related to the conspiracy.
-    # Pipeline for creating one sentence summary
-    input_pipeline = create_pipeline(True)
-    summary_rag_pipeline = create_summary_pipeline()
-
-
-
-    st.title("👁️‍🗨️🌉 SF Conspiracy Theory Generator ")
-    st.write(
-        "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco."
-    )
-
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-    if prompt := st.chat_input("What is up?"):
-        prompt = temp_mic_prompt
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        result = input_pipeline.run({
-            "text_embedder": {"text": prompt},
-            "prompt_builder": {"question": prompt}
+        summary_result = summary_rag_pipeline.run({
+            "prompt_builder": {"input": response}
         })
 
-        documents = result.get("llm")
-        if documents:
+        summary_docs = summary_result.get("llm")
+        if summary_docs:
             with st.chat_message("assistant"):
-                response = documents["replies"][0]
-                st.markdown(response)
-                st.session_state.messages.append({"role": "assistant", "content": response})
+                summary_response = summary_docs["replies"][0]
+                st.markdown(summary_response)
 
-            summary_result = summary_rag_pipeline.run({
-                "prompt_builder": {"input": response}
-            })
+        # Function to generate an image using DALL-E API based on the conspiracy theory
+        def generate_image(prompt: str) -> str:
+            try:
+                response = openai.images.generate(
+                    prompt=prompt, 
+                    n=1,
+                    size="512x512"
+                )
+                image_url = response.data[0].url
+                return image_url
+            except Exception as e:
+                st.error(f"Error generating image: {e}")
+                return None
 
-            summary_docs = summary_result.get("llm")
-            if summary_docs:
-                with st.chat_message("assistant"):
-                    summary_response = summary_docs["replies"][0]
-                    st.markdown(summary_response)
+        # Function to display the image from a URL
+        def display_image(image_url: str, file_path: str, save: bool = False):
+            try:
+                response = requests.get(image_url)
+                img = Image.open(BytesIO(response.content))
 
-            # Function to generate an image using DALL-E API based on the conspiracy theory
-            def generate_image(prompt: str) -> str:
-                try:
-                    response = openai.images.generate(
-                        prompt=prompt, 
-                        n=1,
-                        size="512x512"
-                    )
-                    image_url = response.data[0].url
-                    return image_url
-                except Exception as e:
-                    st.error(f"Error generating image: {e}")
-                    return None
+                if save:
+                    if not os.path.exists(file_path):
+                        os.makedirs(file_path)
+                    img.save(os.path.join(file_path, "generated_image.png"))
+                
+                st.image(img, caption="Generated by DALL-E", use_column_width=True)
+            except Exception as e:
+                st.error(f"Error displaying image: {e}")
 
-            # Function to display the image from a URL
-            def display_image(image_url: str, file_path: str, save: bool = False):
-                try:
-                    response = requests.get(image_url)
-                    img = Image.open(BytesIO(response.content))
-
-                    if save:
-                        if not os.path.exists(file_path):
-                            os.makedirs(file_path)
-                        img.save(os.path.join(file_path, "generated_image.png"))
-                    
-                    st.image(img, caption="Generated by DALL-E", use_column_width=True)
-                except Exception as e:
-                    st.error(f"Error displaying image: {e}")
-
-            image_url = generate_image(summary_response)
-            if image_url:
-                display_image(image_url, file_path="images", save=True)
-            else:
-                st.error("Failed to generate image.")
-        
-
+        image_url = generate_image(summary_response)
+        if image_url:
+            display_image(image_url, file_path="images", save=True)
         else:
-            st.error("No documents found. Please check the pipeline configuration.")
+            st.error("Failed to generate image.")
+    
 
-        
-        
+    else:
+        st.error("No documents found. Please check the pipeline configuration.")
+
+    
+    
