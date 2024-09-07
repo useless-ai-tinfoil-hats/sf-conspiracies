@@ -23,3 +23,16 @@ def generate_and_display_image_from_summary(summary: str):
         prompt=summary
     )
     display(Image(data.read()))
+
+
+def generate_and_save_image_from_summary(summary: str, file_path: str):
+    """
+    Generates and saves an image with @cf/bytedance/stable-diffusion-xl-lightning via Cloudflare Workers AI API.
+    """
+    data = client.workers.ai.with_raw_response.run(
+        model_name=MODEL_NAME,
+        account_id=ACCOUNT_ID,
+        prompt=summary
+    )
+    with open(f"{file_path}/stable_diffusion.png", "wb") as outfile: 
+        outfile.write(data.read())
