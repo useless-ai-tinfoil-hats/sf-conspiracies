@@ -184,12 +184,6 @@ def load_app():
     # basic_rag_pipeline.connect("retriever", "prompt_builder.documents")
     # basic_rag_pipeline.connect("prompt_builder", "llm")
 
-
-    st.title("👁️‍🗨️🌉 SF Conspiracy Theory Generator ")
-    st.write(
-        "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco."
-    )
-
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
