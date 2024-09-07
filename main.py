@@ -1,6 +1,7 @@
 import streamlit as st
 from app import load_app
 from integration import load_integration
+from assembly import assembly_detect_speakers
 from PIL import Image
 
 st.set_page_config(page_title="Golden Gate Bridge Themed App", layout="wide")
@@ -29,6 +30,9 @@ with tab2:
     st.write("This tab can be used to display mic version or images maybe.")
     # Define a function to handle recording logic
     load_integration()
+    text = assembly_detect_speakers("piggeons_demo.wav")
+    print(text)
+
 
 # About the Project content
 with tab3:
