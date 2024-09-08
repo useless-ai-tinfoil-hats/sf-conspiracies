@@ -15,7 +15,7 @@ from io import BytesIO
 from PIL import Image
 from image_utils import *
 
-def load_app():
+def load_app(use_mic_template: bool, text=None):
     load_dotenv()
 
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -74,6 +74,8 @@ def load_app():
     mic_template = """Connect the following conversation indicated in the Question to news 
         articles in the Context provided (infer the speaker names based on the conversation 
         and if you can't infer the names, just call them San Francisco Residents), and """ + template
+    
+    combined_template = mic_template if use_mic_template else text_template
 
 #  (Your total response MUST be 800 characters or less).
     summary_template = """
@@ -101,29 +103,9 @@ def load_app():
         """
 
 
-    # temp_mic_prompt = """
-    # Speaker A: Hi, Rafa. How are you doing?
-    # Speaker B: Hi, Vitoria. I'm doing good. And you?
-    # Speaker A: I'm doing good. What have you been up to?
-    # Speaker B: Not much. Just walking here and there. Did you hear what happened to me the other day?
-    # Speaker A: No, what happened?
-    # Speaker B: I was walking through Union Square and I saw a ginormous quantity of pigeons.
-    # Speaker A: Oh my God. Yes. You know, I was at the ferry building and there were so many there too. So annoying.
-    # Speaker B: You know what it is? I think it's the fact that they're building now. Pigeonshe they're not really birds. They're there to monitor us. So they're cyborg agents done by the government in order to monitor the people so that they behave just like the government wants.
-    # Speaker A: Damn. Do you really think that would be happening?
-    # Speaker B: I don't know, but I don't trust the government that much, to be honest.
-    # Speaker A: Fair enough.
-    # """
-
-    # prompt = temp_mic_prompt
-    # Function to create the prompt builder based on the selected template
-    def get_prompt_builder(use_mic_template: bool):
-        selected_template = mic_template if use_mic_template else template
-        return PromptBuilder(template=selected_template)
-
     # Create pipelines dynamically based on the selected template
-    def create_pipeline(use_mic_template: bool, text_embedder):
-        prompt_builder = get_prompt_builder(use_mic_template)
+    def create_pipeline(text_embedder, template):
+        prompt_builder = PromptBuilder(template=template)
         basic_rag_pipeline = Pipeline()
         basic_rag_pipeline.add_component("text_embedder", text_embedder)
         basic_rag_pipeline.add_component("retriever", retriever)
@@ -146,15 +128,9 @@ def load_app():
         return summary_rag_pipeline
 
     # Pipeline for creating one sentence summary
-    input_pipeline = create_pipeline(False, text_embedder)
+    input_pipeline = create_pipeline(text_embedder, combined_template)
     summary_rag_pipeline = create_summary_pipeline()
 
-
-
-    st.title("👁️‍🗨️🌉 SF Conspiracy Theory Generator ")
-    st.write(
-        "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco."
-    )
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -162,9 +138,11 @@ def load_app():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    
-    with st.container():
-        prompt = st.chat_input("What is up?")
+    if not use_mic_template:
+        with st.container():
+            prompt = st.chat_input("What topics do you want a conspiracy on?", key=use_mic_template)
+    else:
+        prompt = text
 
     if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -192,12 +170,6 @@ def load_app():
             summary_docs = summary_result.get("llm")
             if summary_docs:
                 summary_response = summary_docs["replies"][0]
-                with st.chat_message("assistant"):
-                    st.markdown(summary_response)
-
-                        
-                        
-
                 generate_and_display_image_from_summary(summary_response, save=True)
             else:
                 st.error("Failed to generate summary.")

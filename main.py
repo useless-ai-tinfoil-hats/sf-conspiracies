@@ -1,5 +1,7 @@
 import streamlit as st
 from app import load_app
+from integration import load_integration
+from assembly import assembly_detect_speakers
 from PIL import Image
 
 st.set_page_config(page_title="Golden Gate Bridge Themed App", layout="wide")
@@ -19,35 +21,17 @@ tab1, tab2, tab3 = st.tabs(["Generate Conspiracies", "Mic", 'About the Project']
 
 # Generate Conspiracies tab content
 with tab1:
-    st.header("Welcome to the Home Tab")
-    st.write( "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco.")
-    load_app()
+    st.header("Welcome to the Conspiracy Hub")
+    st.write( "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 with AssemblyAI and CloudFlare Model Endpoints to generate conspiracy theories about the city of San Francisco.")
+    load_app(False)
 # Mic content
 with tab2:
-    st.header("Mic Overview")
-    st.write("This tab can be used to display mic version or images maybe.")
+    st.header("Conversation to Conspiracy (we can hear you)")
+    st.write("This tab can be used to record a conversation and generate a conspiracy theory off this conversation.")
     # Define a function to handle recording logic
-
-    def handle_recording(start_recording):
-        if start_recording:
-            st.write("Recording started...")
-            # Add your recording logic here
-        else:
-            st.write("Recording stopped.")
-            # Add your stop recording logic here
-
-    # Streamlit app code
-    def record_button():
-        # Initialize session state if not already present
-        if 'start_recording' not in st.session_state:
-            st.session_state.start_recording = False
-
-        # Display the appropriate button based on the recording state
-        button_text = 'Start Recording' if not st.session_state.start_recording else 'Stop Recording'
-        if st.button(button_text):
-            st.session_state.start_recording = not st.session_state.start_recording
-            handle_recording(st.session_state.start_recording)
-    record_button()
+    load_integration()
+    text = assembly_detect_speakers("output_test.wav")
+    load_app(True, text)
 
 # About the Project content
 with tab3:
