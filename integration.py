@@ -27,7 +27,7 @@ def load_integration():
             try:
                 while not stop_recording_event.is_set():
                     try:
-                        data = stream.read(chunk, exception_on_overflow=False)  # Handle overflows
+                        data = stream.read(chunk, exception_on_overflow=False)
                         frames.append(data)
                     except IOError as e:
                         st.error(f"IOError during recording: {e}")

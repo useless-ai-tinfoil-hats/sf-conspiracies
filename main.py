@@ -21,18 +21,17 @@ tab1, tab2, tab3 = st.tabs(["Generate Conspiracies", "Mic", 'About the Project']
 
 # Generate Conspiracies tab content
 with tab1:
-    st.header("Welcome to the Home Tab")
-    st.write( "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 to generate conspiracy theories about the city of San Francisco.")
+    st.header("Welcome to the Conspiracy Hub")
+    st.write( "This is a chatbot powered by OpenAI's GPT-3.5-Turbo, orchestrated by Haystack 2.0 with AssemblyAI and CloudFlare Model Endpoints to generate conspiracy theories about the city of San Francisco.")
     load_app(False)
 # Mic content
 with tab2:
-    st.header("Mic Overview")
-    st.write("This tab can be used to display mic version or images maybe.")
+    st.header("Conversation to Conspiracy (we can hear you)")
+    st.write("This tab can be used to record a conversation and generate a conspiracy theory off this conversation.")
     # Define a function to handle recording logic
-    record_boolean = load_integration()
-    text = assembly_detect_speakers("piggeons_demo.wav")
-    print(text)
-    load_app(True, record_boolean)
+    load_integration()
+    text = assembly_detect_speakers("output_test.wav")
+    load_app(True, text)
 
 # About the Project content
 with tab3:
